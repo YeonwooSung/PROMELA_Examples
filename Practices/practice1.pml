@@ -1,5 +1,3 @@
-#include "never.pml"
-
 bool s1, s2, s3 = false;
 mtype ={one, two , three};
 mtype x = one;
