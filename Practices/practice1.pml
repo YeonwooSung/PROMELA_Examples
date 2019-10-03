@@ -1,39 +1,42 @@
-bool s1, s2, s3 = false;
+bool state1 = false;
+bool state2 = false;
+bool state3 = false;
+
 mtype = {three, two , one};
 mtype x = one;
 
 active proctype P1() {
   if
-  :: !s2 && !s3 && x == one ->
-      s1 = true;
+  :: !state2 && !state3 && x == one ->
+      state1 = true;
       x = two;
-      s1 = false;
+      state1 = false;
   fi
 }
 
 active proctype P2() {
   if
-  :: !s1 && !s3 && x == two ->
-      s2 = true;
+  :: !state1 && !state3 && x == two ->
+      state2 = true;
       x = three;
-      s2 = false;
+      state2 = false;
   fi
 }
 
 active proctype P3() {
   if
-  :: !s1 && !s2 && x == three ->
-      s3 = true;
+  :: !state1 && !state2 && x == three ->
+      state3 = true;
       x = one;
-      s3 = false;
+      state3 = false;
   fi
 }
 
 never {
   do
-  :: s1 && s2 -> break;
-  :: s1 && s3 -> break;
-  :: s2 && s3 -> break;
+  :: state1 && state2 -> break;
+  :: state1 && state3 -> break;
+  :: state2 && state3 -> break;
   :: else -> skip
   od
 }
