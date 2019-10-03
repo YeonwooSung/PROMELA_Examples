@@ -1,5 +1,5 @@
 bool s1, s2, s3 = false;
-mtype ={one, two , three};
+mtype = {three, two , one};
 mtype x = one;
 
 active proctype P1() {
