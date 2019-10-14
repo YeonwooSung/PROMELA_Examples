@@ -1,3 +1,6 @@
+#define X_ODD (x%2 == 1)
+#define X_IS_TEN (x == 10)
+
 byte x=1;
 byte y=0;
 
@@ -18,4 +21,3 @@ active proctype P3(){
     :: y<x ->y=x
     od
 }
-å
