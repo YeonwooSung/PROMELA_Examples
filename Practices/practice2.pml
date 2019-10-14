@@ -13,7 +13,7 @@ active [N] proctype P1() {
 
   int count;
 
-  printf("unlocking the print");
+  printf("Unlocking the print");
   numberAvailable++;
   print[id] = true;
 
@@ -51,7 +51,7 @@ active [N] proctype P1() {
   print[id] = false;
   numberAvailable--;
 
-  printf("locked the print");
+  printf("Locked the print");
   flags[id] = -1;
 }
 
