@@ -6,7 +6,7 @@ byte y=0;
 #define C1 (x <= y)
 #define C2 (x == y)
 #define C3 (x != y)
-#define C4 (x > y)
+
 
 //ltl a { eventually X_IS_NOT_TEN }
 
@@ -21,10 +21,6 @@ byte y=0;
 //ltl d { always C1 }
 // Weak fairness, once x reaches 255, do not execute P1 or P2, as those will result in a byte overflow.
 // No fairness, never execute P3, so y will alawys be 0.
-
-//ltl d_reverse { eventually C4 }
-// Negate and Spin check for reverse condition
-// Spin failed, so the original condition is true.
 
 //ltl e { always (C3 implies (eventually C2)) }
 // Weak fairness, eventually P1 or P2 will run after P3
@@ -45,6 +41,6 @@ active proctype P2(){
 
 active proctype P3(){
     do
-    :: y<x ->y=x
+    :: y<x -> y=x
     od
 }

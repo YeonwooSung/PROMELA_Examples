@@ -37,6 +37,6 @@ never {
   :: state1 && state2 -> break;
   :: state1 && state3 -> break;
   :: state2 && state3 -> break;
-  :: else -> skip
+  :: else
   od
 }

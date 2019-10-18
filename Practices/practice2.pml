@@ -13,9 +13,6 @@ active [N] proctype P1() {
 
   int count;
 
-  printf("Unlocking the print");
-  numberAvailable++;
-  print[id] = true;
 
   //Unlocking
   for(count : 0 .. N-1){
@@ -44,14 +41,17 @@ active [N] proctype P1() {
     od;
   }
 
-  //printf("unlocking the print");
-  //numberAvailable++;
-  //print[id] = true;
+  printf("Unlocking the print");
+  numberAvailable++;
+  printf("Change the value of print[%d] to true", id);
+  print[id] = true;
 
+  printf("Change the value of print[%d] to false", id);
   print[id] = false;
   numberAvailable--;
 
   printf("Locked the print");
+
   flags[id] = -1;
 }
 
