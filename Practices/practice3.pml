@@ -10,21 +10,21 @@ byte y=0;
 
 //ltl a { eventually X_IS_NOT_TEN }
 
-//ltl b { !(eventually (always X_ODD)) }
 // Negate and Spin check for reverse condition.
 // Spin succeeds, so the original condition is false.
+//ltl b { !(eventually (always X_ODD)) }
 
-//ltl c { !(eventually (always (eventually X_ODD))) }
 // Weak fairness, P2 will eventually make x odd.
 // No fairness, P2 never executes, P1 does not change x's parity, so x is always odd.
+//ltl c { !(eventually (always (eventually X_ODD))) }
 
-//ltl d { always C1 }
 // Weak fairness, once x reaches 255, do not execute P1 or P2, as those will result in a byte overflow.
 // No fairness, never execute P3, so y will alawys be 0.
+//ltl d { always C1 }
 
-//ltl e { always (C3 implies (eventually C2)) }
 // Weak fairness, eventually P1 or P2 will run after P3
 // No fairness, nothing runs after P3
+//ltl e { always (C3 implies (eventually C2)) }
 
 
 active proctype P1(){
