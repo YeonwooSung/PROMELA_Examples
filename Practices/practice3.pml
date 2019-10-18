@@ -24,7 +24,7 @@ byte y=0;
 
 // Weak fairness, eventually P1 or P2 will run after P3
 // No fairness, nothing runs after P3
-//ltl e { always (C3 implies (eventually C2)) }
+ltl e { always (C3 implies (eventually C2)) }
 
 
 active proctype P1(){
