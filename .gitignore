@@ -19,3 +19,6 @@ pan.t
 
 *.trail
 _spin_nvr.tmp
+
+*.ps
+*.pre
