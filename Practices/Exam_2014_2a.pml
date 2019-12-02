@@ -79,14 +79,14 @@ active proctype P2() {
 // Thus, this never claim should be failed.
 never {
     do
-    :: skip
+    :: true
     :: len(send) != 0 -> break;
     :: len(ack) != 0 -> break;
     :: len(repeat) != 0 -> break;
     od;
 
     do
-    :: skip
+    :: true
     :: len(send) == 0 && len(ack) == 0 && len(repeat) == 0 -> break;
     od;
 }
