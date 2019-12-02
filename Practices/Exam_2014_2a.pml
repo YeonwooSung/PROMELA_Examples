@@ -5,6 +5,14 @@ chan ack = [BUF] of {byte};
 chan repeat = [BUF] of {byte};
 
 
+// To prevent and check the non-progress cycle, we could use "progress" label in the PROMELA specification.
+// By using the "progress" label, we could let the SPIN know that the specification actually makes some
+// progress while running the program.
+
+// Also, we could use the LTL formulae below to check the livelock.
+//ltl a { eventually always np_ }
+
+
 active proctype P1() {
     byte value = 0;
     byte resend_value = 0;
